@@ -15,8 +15,7 @@ module Bowling
 		def score
 			score = 0
 			frameIndex = 0
-			frame = 0
-			while frame < 10
+			(1..10).each do # total 10 frame
 				if is_strike?( frameIndex )
 					score += ( 10 + strike_bonus( frameIndex ) )
 					frameIndex += 1
@@ -27,7 +26,6 @@ module Bowling
 					score += sum_of_balls_in_frame( frameIndex )
 					frameIndex += 2
 				end
-				frame += 1
 			end
 			score
 		end

@@ -17,13 +17,13 @@ module Bowling
 			frameIndex = 0
 			while @rolls[frameIndex]
 				if is_strike?( frameIndex )
-					score += ( 10 + @rolls[frameIndex + 1] + @rolls[frameIndex + 2] )
+					score += ( 10 + strike_bonus( frameIndex ) )
 					frameIndex += 1
 				elsif is_spare?( frameIndex )
-					score += ( 10 + @rolls[frameIndex + 2] )
+					score += ( 10 + spare_bonus( frameIndex ) )
 					frameIndex += 2
 				else
-					score += ( @rolls[frameIndex] + @rolls[frameIndex + 1] )
+					score += sum_of_balls_in_frame( frameIndex )
 					frameIndex += 2
 				end
 			end
@@ -38,5 +38,18 @@ module Bowling
 		def is_strike?(frameIndex)
 			@rolls[frameIndex] == 10
 		end
+
+		def sum_of_balls_in_frame(frameIndex)
+			@rolls[frameIndex] + @rolls[frameIndex + 1];
+		end
+
+		def spare_bonus(frameIndex)
+		    @rolls[frameIndex + 2];
+		end
+
+		def strike_bonus(frameIndex)
+		    @rolls[frameIndex + 1] + @rolls[frameIndex + 2];
+		end
+
 	end
 end

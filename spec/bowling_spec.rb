@@ -14,6 +14,11 @@ describe Bowling do
   		}
   	end
 
+  	def roll_spare
+  		subject.roll(5)
+  		subject.roll(5)
+  	end
+
   	it 'respond to roll' do
   		expect(subject).to respond_to(:roll)
   	end
@@ -31,8 +36,7 @@ describe Bowling do
   	end
 
   	it 'roll one spare' do
-  		subject.roll(5)
-  		subject.roll(5)
+  		roll_spare
   		subject.roll(3)
   		roll_many(17, 0)
   		expect(subject.score).to eq 16

@@ -5,7 +5,10 @@ describe Bowling do
     expect(Bowling::VERSION).not_to be nil
   end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
+  describe Bowling::Bowling do
+  	subject {Bowling::Bowling.new}
+  	it 'respond to roll' do
+  		expect(subject).to respond_to(:roll)
+  	end
   end
 end

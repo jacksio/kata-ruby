@@ -10,5 +10,7 @@ describe Bowling do
   	it 'respond to roll' do
   		expect(subject).to respond_to(:roll)
   	end
+
+  	it { is_expected.to respond_to(:score) }
   end
 end

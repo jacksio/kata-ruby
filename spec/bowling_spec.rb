@@ -19,6 +19,10 @@ describe Bowling do
   		subject.roll(5)
   	end
 
+  	def roll_strike
+  		subject.roll(10)
+  	end
+
   	it 'respond to roll' do
   		expect(subject).to respond_to(:roll)
   	end
@@ -43,7 +47,7 @@ describe Bowling do
   	end
 
   	it 'roll one strike' do
-  		subject.roll(10)
+  		roll_strike
   		subject.roll(4)
   		subject.roll(3)
   		roll_many(16, 0)

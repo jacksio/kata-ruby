@@ -12,5 +12,12 @@ describe Bowling do
   	end
 
   	it { is_expected.to respond_to(:score) }
+
+  	it 'roll all 0' do
+  		20.times{
+  			subject.roll(0)
+  		}
+  		expect(subject.score).to eq 0
+  	end
   end
 end

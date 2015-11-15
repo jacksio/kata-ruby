@@ -41,5 +41,13 @@ describe Bowling do
   		roll_many(17, 0)
   		expect(subject.score).to eq 16
   	end
+
+  	it 'roll one strike' do
+  		subject.roll(10)
+  		subject.roll(4)
+  		subject.roll(3)
+  		roll_many(16, 0)
+  		expect(subject.score).to eq 24
+  	end
   end
 end

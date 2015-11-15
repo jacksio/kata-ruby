@@ -16,12 +16,16 @@ module Bowling
 			score = 0
 			frameIndex = 0
 			while @rolls[frameIndex]
-				if is_spare?( frameIndex )
+				if @rolls[frameIndex] == 10
+					score += ( 10 + @rolls[frameIndex + 1] + @rolls[frameIndex + 2] )
+					frameIndex += 1
+				elsif is_spare?( frameIndex )
 					score += ( 10 + @rolls[frameIndex + 2] )
+					frameIndex += 2
 				else
 					score += ( @rolls[frameIndex] + @rolls[frameIndex + 1] )
+					frameIndex += 2
 				end
-				frameIndex += 2
 			end
 			score
 		end

@@ -29,5 +29,14 @@ describe Bowling do
   		roll_many(20, 1)
   		expect(subject.score).to eq 20
   	end
+=begin
+  	it 'roll one spare' do
+  		subject.roll(5)
+  		subject.roll(5)
+  		subject.roll(3)
+  		roll_many(17, 0)
+  		expect(subject.score).to eq 16
+  	end
+=end
   end
 end

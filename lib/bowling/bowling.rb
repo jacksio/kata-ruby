@@ -16,7 +16,7 @@ module Bowling
 			score = 0
 			frameIndex = 0
 			while @rolls[frameIndex]
-				if @rolls[frameIndex] + @rolls[frameIndex + 1] == 10 #spare
+				if is_spare?( frameIndex )
 					score += ( 10 + @rolls[frameIndex + 2] )
 				else
 					score += ( @rolls[frameIndex] + @rolls[frameIndex + 1] )
@@ -24,6 +24,11 @@ module Bowling
 				frameIndex += 2
 			end
 			score
+		end
+
+		private
+		def is_spare?(frameIndex)
+			@rolls[frameIndex] + @rolls[frameIndex + 1] == 10
 		end
 	end
 end

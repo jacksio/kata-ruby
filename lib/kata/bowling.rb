@@ -1,4 +1,4 @@
-module Bowling
+module Kata
 	class Bowling
 
 		def initialize

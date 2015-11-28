@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'bowling/version'
+require 'kata/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "bowling"
-  spec.version       = Bowling::VERSION
+  spec.name          = "kata"
+  spec.version       = Kata::VERSION
   spec.authors       = ["Jack Sio"]
   spec.email         = ["jack1130@gmail.com"]
 
-  spec.summary       = %q{The bowling game kata.}
-  spec.description   = %q{The bowling game kata.}
+  spec.summary       = %q{kata}
+  spec.description   = %q{kata}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 

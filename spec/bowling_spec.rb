@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe Bowling do
+describe Kata do
   it 'has a version number' do
-    expect(Bowling::VERSION).not_to be nil
+    expect(Kata::VERSION).not_to be nil
   end
 
-  describe Bowling::Bowling do
-  	subject {Bowling::Bowling.new}
+  describe Kata::Bowling do
+  	subject {Kata::Bowling.new}
 
   	def roll_many(times, pins)
   		times.times{

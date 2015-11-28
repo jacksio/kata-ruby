@@ -1,10 +1,6 @@
 require 'spec_helper'
 
 describe Kata do
-  it 'has a version number' do
-    expect(Kata::VERSION).not_to be nil
-  end
-
   describe Kata::Bowling do
   	subject {Kata::Bowling.new}
 
